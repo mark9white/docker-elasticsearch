@@ -1,3 +1,4 @@
 script:
+- echo '2^2^21' | time bc > /dev/null
 - sudo docker run -d -p 9200:9200 circleci/elasticsearch; sleep 10
 - curl --retry 10 --retry-delay 5 -v http://localhost:9200
