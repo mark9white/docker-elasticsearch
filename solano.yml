@@ -1,4 +1,3 @@
 ---
 hooks:
-  post_setup:
-    - echo '2^2^21' | bc > /dev/null
+  post_setup: echo '2^2^21' | bc > /dev/null
