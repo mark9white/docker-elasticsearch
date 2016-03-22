@@ -1,4 +1,11 @@
-script:
-- echo '2^2^21' | bc > /dev/null
-- sudo docker run -d -p 9200:9200 circleci/elasticsearch; sleep 10
-- curl --retry 10 --retry-delay 5 -v http://localhost:9200
+pre_ci:
+    - docker build -t myImage:tip .
+
+pre_ci_boot:
+    image_name: myImage
+    image_tag: tip
+    pull: false
+    options: "-e HOME=/root"
+    
+ci:
+    - ls    
